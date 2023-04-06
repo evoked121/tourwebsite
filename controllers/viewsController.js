@@ -3,7 +3,8 @@ const catchAsync = require('../utils/catchAsync');
 
 exports.getOverview = catchAsync(async (req, res) => {
   //1) get tour data from collection
-  const tours = await Tour.find();
+  //1) filtering method
+  const tours = await Tour.find(req.query);
 
   //2) build template
 
